@@ -30,37 +30,30 @@ include('includes/config.php');
 </head>
 <body>
 <?php include('includes/header.php');?>
+<br>
 <div class="banner">
 	<div class="container">
 		<!-- <h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;" style="color:#000 !important"> TMS - Tourism Management System</h1> -->
+		 <img class="wow zoomIn animated animated" data-wow-delay=".5s" style="width:100%; margin:0,0,0,0; visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;" style="color:#000 !important" src="./images/3.jpg" alt="">
 	</div>
 </div>
 
 
-
-
-
-
 <!---holiday---->
-<div class="container">
-	<div class="holiday">
-	
-
-
-
-	
+<div class="holiday">
+	<div class="container">	
 	<h3>Package List</h3>
-
 					
-<?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
-$query = $dbh->prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{	?>
+			<?php $sql = "SELECT * from tbltourpackages order by rand() limit 4";
+			$query = $dbh->prepare($sql);
+			$query->execute();
+			$results=$query->fetchAll(PDO::FETCH_OBJ);
+			$cnt=1;
+			if($query->rowCount() > 0)
+			{
+			foreach($results as $result)
+			{	?>
+
 			<div class="rom-btm">
 				<div class="col-md-3 room-left wow fadeInLeft animated" data-wow-delay=".5s">
 					<img src="admin/pacakgeimages/<?php echo htmlentities($result->PackageImage);?>" class="img-responsive" alt="">
@@ -78,62 +71,62 @@ foreach($results as $result)
 				<div class="clearfix"></div>
 			</div>
 
-<?php }} ?>
+		<?php }} ?>
 			
 		
-<div><a href="package-list.php" class="view">View More Packages</a></div>
-</div>
-			<div class="clearfix"></div>
-	</div>
-
-
-
-<!--- routes ---->
-<div class="routes">
-	<div class="container">
-		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
-			<div class="rou-left">
-				<a href="#"><i class="glyphicon glyphicon-list-alt"></i></a>
+			<div><a href="package-list.php" class="view">View More Packages</a></div>
 			</div>
-			<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
-				<h3>80000</h3>
-				<p>Enquiries</p>
+						<div class="clearfix"></div>
 			</div>
+
+
+
+		<!--- routes ---->
+		<div class="routes">
+			<div class="container">
+				<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
+					<div class="rou-left">
+						<a href="#"><i class="glyphicon glyphicon-list-alt"></i></a>
+					</div>
+					<div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
+						<h3>80000</h3>
+						<p>Enquiries</p>
+					</div>
+						<div class="clearfix"></div>
+				</div>
+				<div class="col-md-4 routes-left">
+					<div class="rou-left">
+						<a href="#"><i class="fa fa-user"></i></a>
+					</div>
+					<div class="rou-rgt">
+						<h3>1900</h3>
+						<p>Registered users</p>
+					</div>
+						<div class="clearfix"></div>
+				</div>
+				<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
+					<div class="rou-left">
+						<a href="#"><i class="fa fa-ticket"></i></a>
+					</div>
+					<div class="rou-rgt">
+						<h3>7,00,00,000+</h3>
+						<p>Booking</p>
+					</div>
+						<div class="clearfix"></div>
+				</div>
 				<div class="clearfix"></div>
+			</div>
 		</div>
-		<div class="col-md-4 routes-left">
-			<div class="rou-left">
-				<a href="#"><i class="fa fa-user"></i></a>
-			</div>
-			<div class="rou-rgt">
-				<h3>1900</h3>
-				<p>Registered users</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
-			<div class="rou-left">
-				<a href="#"><i class="fa fa-ticket"></i></a>
-			</div>
-			<div class="rou-rgt">
-				<h3>7,00,00,000+</h3>
-				<p>Booking</p>
-			</div>
-				<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
 
-<?php include('includes/footer.php');?>
-<!-- signup -->
-<?php include('includes/signup.php');?>			
-<!-- //signu -->
-<!-- signin -->
-<?php include('includes/signin.php');?>			
-<!-- //signin -->
-<!-- write us -->
-<?php include('includes/write-us.php');?>			
-<!-- //write us -->
+	<?php include('includes/footer.php');?>
+	<!-- signup -->
+	<?php include('includes/signup.php');?>			
+	<!-- //signu -->
+	<!-- signin -->
+	<?php include('includes/signin.php');?>			
+	<!-- //signin -->
+	<!-- write us -->
+	<?php include('includes/write-us.php');?>			
+	<!-- //write us -->
 </body>
 </html>
